@@ -2,14 +2,14 @@
 data "grafana_oncall_slack_channel" "Devs" {
   provider = grafana.oncall
 
-  name = "<Devs-channel-name>"
+  name = "Devs-Channel"
 }
 
 # Name of the Slack channel to notify about on-call schedules for SREs
 data "grafana_oncall_slack_channel" "SREs" {
   provider = grafana.oncall
 
-  name = "Test-SRE-Channel>"
+  name = "Test-SRE-Channel"
 }
 
 resource "grafana_oncall_schedule" "schedule_Devs" {
@@ -17,7 +17,7 @@ resource "grafana_oncall_schedule" "schedule_Devs" {
 
   name             = "Devs"
   type             = "ical"
-  ical_url_primary = "<secret-iCal-URL-for-devs-calendar>"
+  ical_url_primary = "https://oncall-prod-us-central-0.grafana.net/oncall"
   slack {
     channel_id = data.grafana_oncall_slack_channel.Devs.slack_id
   }
@@ -28,7 +28,7 @@ resource "grafana_oncall_schedule" "schedule_SREs" {
 
   name             = "SREs"
   type             = "ical"
-  ical_url_primary = "<secret-iCal-URL-for-SREs-calendar>"
+  ical_url_primary = "https://oncall-prod-us-central-0.grafana.net/oncall"
   slack {
     channel_id = data.grafana_oncall_slack_channel.SREs.slack_id
   }
