@@ -9,7 +9,7 @@ data "grafana_oncall_slack_channel" "Devs" {
 data "grafana_oncall_slack_channel" "SREs" {
   provider = grafana.oncall
 
-  name = "<SREs-channel-name>"
+  name = "Test-SRE-Channel>"
 }
 
 resource "grafana_oncall_schedule" "schedule_Devs" {
