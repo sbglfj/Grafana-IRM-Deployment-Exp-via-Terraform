@@ -11,6 +11,6 @@ provider "grafana" {
   alias = "oncall"
 
   url  = "https://sbglfj.grafana.net"
-  auth = "<Service-account-token>"
-  oncall_url = "<OnCall-URL>"
+  auth = "glsa_mNP6lEHszsvtIVFJzSAqlxXhQWzFh3ig_715c2eaa"
+  oncall_url = "https://oncall-prod-us-central-0.grafana.net/oncall"
 }
